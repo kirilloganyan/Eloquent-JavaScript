@@ -51,3 +51,21 @@ function chessboard(size){
 }
 chessboard(prompt("What's about size?"))
 console.log(board)
+
+//Name:Minimum
+
+//Exercise:Минимум
+// В предыдущей главе была представлена стандартная функция Math. min,
+// которая возвращает наименьший из ее аргументов. Теперь мы можем сами
+// создать нечто подобное. Напишите функцию min, которая принимает два
+// аргумента и возвращает их минимум.
+
+const min=(a,b)=>{
+    if(a<b) return a;
+    else
+        return b;
+}
+console.log(min(0, 10));
+// → 0
+console.log(min(0, -10));
+// → -10
