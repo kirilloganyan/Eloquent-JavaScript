@@ -181,7 +181,42 @@ console.log(range(5, 2, -1));
 console.log(sum(range(1, 10)));
 // → 55
 
+//Name:reverse array
 
+//Exercise:У массивов есть метод reverse, который изменяет порядок следования
+// элементов в массиве. Для выполнения этого упражнения напишите две
+// 104 Глава 4. СТруктуры данных: объекты и массивы
+// функции: reverseArray и reverseArrayinPlace. Первая функция, reverseArray,
+// принимает массив в качестве аргумента и создает новый массив, содержащий
+// те же элементы в обратном порядке. Вторая, reverseArrayinPlace, делает
+// то же, что и метод reverse: преобразовывает массив, заданный в качестве
+// аргумента, меняя порядок следования его элементов на обратный. Не используйте для этого стандартный метод reverse.
+
+
+//Solution:
+function reverseArray(array) {
+    let newarr=[];
+    for (let i = array.length-1; i >0;i--) {
+        newarr.push(array[i]);
+    }
+    return newarr;
+}
+
+function reverseArrayInPlace(array) {
+    for (let i=0; i<Math.floor(array.length/2); i++) {
+        let old = array[i];
+        array[i] = array[array.length-1-i];
+        array[array.length-1-i]=old;
+    }
+    return array;
+}
+
+console.log(reverseArray(["A", "B", "C"]));
+// → ["C", "B", "A"];
+let arrayValue = [1, 2, 3, 4, 5];
+reverseArrayInPlace(arrayValue);
+console.log(arrayValue);
+// → [5, 4, 3, 2, 1]
 
 //Name:
 
