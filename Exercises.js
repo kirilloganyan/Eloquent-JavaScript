@@ -230,6 +230,30 @@ let arrays = [[1, 2, 3], [4, 5], [6]];
 console.log(arrays.reduce((array,current)=>array.concat(current), []));
 // → [1, 2, 3, 4, 5, 6]
 
+//Name:Метод every
+
+//Exercise:
+// Для массивов существует метод every, аналогичный методу some. Этот метод возвращает true, когда заданная функция возвращает true для каждого
+// элемента массива. В некотором смысле some - это версия оператора 11 для
+// массивов, а метод every подобен оператору &&.
+// Реализуйте метод every, принимающий в качестве параметров массив и предикативную функцию. Напишите две версии: одну с использованием цикла,
+// а вторую - с применением метода some.
+
+//Solution:
+function every(array, test) {
+    for(let current=0;current<array.length;current++){
+        if(!test(array[current]))
+            return false
+    }
+    return true
+}
+console.log(every([1, 3, 5], n => n < 10));
+// → true
+console.log(every([2, 4, 16], n => n < 10));
+// → false
+console.log(every([], n => n < 10));
+// → true
+
 //Name:
 
 //Exercise:
