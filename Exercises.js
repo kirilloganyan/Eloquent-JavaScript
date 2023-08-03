@@ -218,6 +218,18 @@ reverseArrayInPlace(arrayValue);
 console.log(arrayValue);
 // → [5, 4, 3, 2, 1]
 
+//Name:Свертка
+
+//Exercise:
+// Используйте метод reduce в сочетании с методом concat для свертки массива, состоящего из нескольких массивов, в один массив, у которого есть
+// все элементы входных массивов.
+
+
+//Solution:
+let arrays = [[1, 2, 3], [4, 5], [6]];
+console.log(arrays.reduce((array,current)=>array.concat(current), []));
+// → [1, 2, 3, 4, 5, 6]
+
 //Name:
 
 //Exercise:
