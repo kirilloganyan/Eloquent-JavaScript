@@ -254,6 +254,46 @@ console.log(every([2, 4, 16], n => n < 10));
 console.log(every([], n => n < 10));
 // → true
 
+
+//Name:
+// Тип вектора
+
+//Exercise:
+// Напишите класс Vec, который представляет вектор в двумерном пространстве. Вектор принимает параметры х и у (числа) и сохраняет их в свойствах
+// с тем же именем.
+// 142 Глава 6. Тайная жизнь объектов
+// Напишите для прототипа Vec два метода, plus и minus, которые принимают
+// в качестве параметра другой вектор и возвращают новый вектор, представляющий собой сумму или разность значений х и у для двух векторов (this
+// и параметра).
+// Добавьте в прототип свойство-геттер length, которое вычисляет длину
+// вектора - расстояние от точки (х, у) до начала координат (О, О).
+
+//Solution:
+class Vec {
+    constructor(x, y) {
+        this.x= x;
+        this.y= y;
+    }
+
+    plus(other) {
+        return new Vec(this.x + other.x,this.y + other.y);
+    }
+
+    minus(other) {
+        return new Vec(this.x - other.x,this.y - other.y);
+    }
+
+    get length() {
+        return Math.sqrt(this.x * this.x + this.y * this.y);
+    }
+}
+console.log(new Vec(1, 2).plus(new Vec(2, 3)));
+// → Vec{x: 3, y: 5}
+console.log(new Vec(1, 2).minus(new Vec(2, 3)));
+// → Vec{x: -1, y: -1}
+console.log(new Vec(3, 4).length);
+// → 5
+
 //Name:
 
 //Exercise:
